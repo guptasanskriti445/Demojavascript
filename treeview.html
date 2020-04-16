@@ -1,0 +1,138 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+            <title>jsTree</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <!--[if lt IE 9]><script src="./assets/html5.js"></script><![endif]-->
+        
+            <meta name="robots" content="index,follow" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.1/themes/default/style.min.css"> -->
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+            <!-- <link rel="stylesheet" href="https://github.com/orangehill/jstree-bootstrap-theme/blob/master/dist/themes/proton/style.min.css"> -->
+            <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+            <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.1/jstree.min.js"></script> -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.8/themes/default/style.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.8/jstree.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6"><div id="rendertree" class="demo"></div></div>
+                <div class="col-md-6">
+                    <div id="event_result">
+
+                    </div>
+                    <button id="clickme">Click Me</button>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            $(function () {
+                nodadata= [
+                        { "id" : "ajson1", "parent" : "#", "text" : "Simple root node" },
+                        { "id" : "ajson2", "parent" : "#", "text" : "Root node 2" },
+                        { "id" : "ajson3", "parent" : "ajson2", "text" : "Child 1" },
+                        { "id" : "ajson4", "parent" : "ajson2", "text" : "Child 2" ,"icon":"fa fa-plus"},
+                    ];
+            $('#rendertree').jstree({ 
+                
+                'core' : {
+                    // "check_callback" : true,
+                    "animation":0,
+                    "themes": { "icons": true, "dots": false, "theme": "default" },
+                    "check_callback" : function (operation, node, parent, position, more) {
+                        if(operation === "copy_node" || operation === "move_node") {
+                            if(parent.id === "#") {
+                            return false; // prevent moving a child above or below the root
+                            }
+                        }
+                        return true; // allow everything else
+                        },
+                    "multiple" : true,
+                    'data' :nodadata,
+                    // "themes": { "icons": true, "dots": false, "theme": "default" },
+                    "types": {
+                        "root": {
+                            "icon" : "fa fa-plus "
+                            },
+                            "child": {
+                            
+                               "icon": "fa fa-plus icon-lg"
+                            },
+                            "default" : {
+                            }
+                        },
+                } ,
+                'plugins': ["wholerow","dnd","types","themes","changed"]
+        });
+        // $('div#rendertree').on('ready.jstree click', function (e, data) {
+        //         $('i.jstree-icon').removeClass('jstree-themeicon jstree-icon').addClass('fa fa-plus');
+        // });
+
+                    $('#rendertree').on('open_node.jstree', function (e, data) {
+                $('#' + data.node.id).find('i.jstree-icon jstree-ocl').first()
+                    .removeClass('fa fa-minus').addClass('fa fa-plus');
+                $('#' + data.node.id).find('i.jstree-icon.jstree-themeicon')
+                    .addClass('glyphicon glyphicon-leaf');
+                    // $('#rendertree').jstree(true).refresh();
+            });
+            // bind customize icon change function in jsTree close_node event.
+            $('#rendertree').on('close_node.jstree', function (e, data) {
+                $('#' + data.node.id).find('i.jstree-icon jstree-ocl').first()
+                    .removeClass('fa fa-plus').addClass('fa fa-minus');
+                $('#' + data.node.id).find('i.jstree-icon.jstree-themeicon')
+                    .addClass('glyphicon glyphicon-leaf');
+            });
+                    // $('#rendertree').jstree(true).refresh();
+        $('#rendertree').on("changed.jstree", function (e, data) {
+            console.log("The selected nodes are:");
+            console.log(data.selected);
+        });
+        $('#rendertree').on("changed.jstree", function (e, data) {
+        // console.log(data.instance.get_selected(true)[0].text);
+        console.log(data.instance.get_node(data.selected[0]).text);
+        });
+
+        $('#rendertree').on('changed.jstree', function (e, data) {
+        var i, j, r = [];
+        for(i = 0, j = data.selected.length; i < j; i++) {
+        r.push(data.instance.get_node(data.selected[i]).text);
+        }
+        $('#event_result').html('Selected: ' + r.join(', '));
+        });
+
+        $('button').on("click", function () {
+            var instance = $('#rendertree').jstree(true);
+            instance.deselect_all();
+            // instance.select_all();
+            // instance.select_node('ajson4');
+        });
+        
+		
+        
+        var parent = '#ajson3';
+var node = { id:123,text:"Hello world"};
+$('#using_json_2').jstree('create_node', parent, node, 'last');
+$('button').on('click', function () {
+    console.log("i am hrere");
+//   $('#jstree').jstree(true).select_node('ajson4_anchor');
+//   $('#jstree').jstree('select_node', 'ajson4_anchor');
+//   $.jstree.reference('#jstree').select_node('ajson4_anchor');
+$("#using_json_2").jstree("create", $("#ajson\\.id"), "inside",  { "data" : "child2" },
+                          function() { alert("added"); }, true);
+});
+
+        // $('#jstreedemo').jstree("create_node", 2, 'inside', 'testme', false, false);
+            });
+        </script>
+    </body>
+</html>
