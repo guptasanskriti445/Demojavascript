@@ -11,6 +11,7 @@
             <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.1.1/themes/default/style.min.css"> -->
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
             <!-- <link rel="stylesheet" href="https://github.com/orangehill/jstree-bootstrap-theme/blob/master/dist/themes/proton/style.min.css"> -->
+            <link rel="stylesheet" href="http://www.orangehilldev.com/jstree-bootstrap-theme/demo/assets/dist/themes/proton/style.css" />
             <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
             <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -30,7 +31,11 @@
                     <div id="event_result">
 
                     </div>
+                    <input type="text" name="searchtext" id="searchtext">
+                    <button id="searchbtn">Saerch</button>
                     <button id="clickme">Click Me</button>
+                    <button id="sam">Create Node</button>
+                    <button id="deletenode">Delete Node</button>
                 </div>
             </div>
         </div>
@@ -48,7 +53,13 @@
                 'core' : {
                     // "check_callback" : true,
                     "animation":0,
-                    "themes": { "icons": true, "dots": false, "theme": "default" },
+                    // "themes": { "icons": true, "dots": false, "theme": "default" },
+                    'themes': {
+                    'name': 'proton',
+                    'responsive': true,
+                    "icons":true,
+                    "dots":false
+                    },
                     "check_callback" : function (operation, node, parent, position, more) {
                         if(operation === "copy_node" || operation === "move_node") {
                             if(parent.id === "#") {
@@ -60,13 +71,37 @@
                     "multiple" : true,
                     'data' :nodadata,
                     // "themes": { "icons": true, "dots": false, "theme": "default" },
-                   
+                    "types" : {
+                            "default" : {
+                                "icon" : "fa fa-plus"
+                            },
+                            "demo" : {
+                                "icon" : "fa fa-plus"
+                            }
+                            },
+                       
                 } ,
-                'plugins': ["wholerow","dnd","types","themes","changed"]
+                'plugins': ["wholerow","dnd","types","themes","changed","search","adv_search"],
+                "search": {
+                            "case_insensitive": false,
+                            "show_only_matches" : true
+                        }
+        }).on("search.jstree", function (e, data) {          
+          console.log("searchdata"+data);
         });
         // $('div#rendertree').on('ready.jstree click', function (e, data) {
         //         $('i.jstree-icon').removeClass('jstree-themeicon jstree-icon').addClass('fa fa-plus');
         // });
+    $('#rendertree').on("select_node.jstree", function (e, data) {
+        var $parent = $('#'+data.node.id).parent();
+                var index = $parent.children().index( $('#'+data.node.id) ) +1;
+
+        if(data.node.parent === '#') {
+            $parent = '#';
+        }
+
+        $(".appendTree").jstree('create_node', $parent, 'new node', index);
+    }); 
 
                     $('#rendertree').on('open_node.jstree', function (e, data) {
                 $('#' + data.node.id).find('i.jstree-icon jstree-ocl').first()
@@ -90,7 +125,17 @@
         $('#rendertree').on("changed.jstree", function (e, data) {
         // console.log(data.instance.get_selected(true)[0].text);
         console.log(data.instance.get_node(data.selected[0]).text);
+        $('#rendertree').jstree().create_node((data.selected[0]), {
+            "id": "ajosn8",
+            "text": "saanvi"
+            }, "last", function() {
+            alert("done");
+            });
         });
+        // $('#rendertree').on("search.jstree", function (e, data) {          
+        //   console.log("searchdata"+data);
+        // });
+
 
         $('#rendertree').on('changed.jstree', function (e, data) {
         var i, j, r = [];
@@ -106,20 +151,60 @@
             // instance.select_all();
             // instance.select_node('ajson4');
         });
-        
+        $("#sam").on("click", function() {
+            $('#rendertree').jstree().create_node('ajson4', {
+            "id": "ajson5",
+            "text": "newly added"
+            }, "last", function() {
+            alert("done");
+            });
+            $('#rendertree').jstree().create_node('ajson5', {
+            "id": "ajson6",
+            "text": "newly added"
+            }, "last", function() {
+            alert("done");
+            });
+        });
 		
-        
-        var parent = '#ajson3';
-var node = { id:123,text:"Hello world"};
-$('#using_json_2').jstree('create_node', parent, node, 'last');
-$('button').on('click', function () {
-    console.log("i am hrere");
-//   $('#jstree').jstree(true).select_node('ajson4_anchor');
-//   $('#jstree').jstree('select_node', 'ajson4_anchor');
-//   $.jstree.reference('#jstree').select_node('ajson4_anchor');
-$("#using_json_2").jstree("create", $("#ajson\\.id"), "inside",  { "data" : "child2" },
-                          function() { alert("added"); }, true);
+        // $('#deletenode').on("click",function(){
+            
+        //     $('#rendertree').jstree().delete_node(["ajson3"]);
+        //     // $('#rendertree').jstree("refresh");
+        // });
+
+        $("#deletenode").click(function(e,data) {
+            console.log("delete evve");
+  var instance = $('#rendertree').jstree(true);
+//   $('#rendertree').jstree('get_selected').attr('id')
+  instance.delete_node(instance.get_selected());
+  console.log($("#rendertree").jstree("get_selected").text());
+//   console.log(data.instance.get_node(data.selected[0]).text);
 });
+
+$('#rendertree').on('rename_node.jstree', function (e, data) {
+  //data.text is the new name:
+  console.log("rename node"+data.text);
+  //MAKE AJAX CALL HERE
+});
+
+$('#searchbtn').on("click",function(){
+    var serstring=$(this).val();
+    var searchResult=$("#rendertree").jstree("serach",serstring);
+    console.dir("searchindex"+searchResult);
+    if ($(searchResult).find('.jstree-search').length == 0) {
+            console.log("reserekfsdjflkjs ")
+            $('#rendertree').jstree('select_node', 'ajson2');
+    $(searchResult).find('.jstree-search').css("color","red");
+    };
+});
+ 
+            $('button').on('click', function () {
+                console.log("i am hrere");
+            //   $('#jstree').jstree(true).select_node('ajson4_anchor');
+            //   $('#jstree').jstree('select_node', 'ajson4_anchor');
+            //   $.jstree.reference('#jstree').select_node('ajson4_anchor');
+
+            });
 
         // $('#jstreedemo').jstree("create_node", 2, 'inside', 'testme', false, false);
             });
