@@ -44,53 +44,14 @@
               <div class="card-body">
                   <div class="col-md-12">
                     
-                  <form class="form-inline">
-                    <div class="form-group pr-1">
-                        <input class="form-control" type="text" name="attribute_name" id="attribute_name">
-                    </div>
-                    <div class="form-group pr-1">
-                      <input class="form-control" type="text" name="attribute_label" id="attribute_label">
-                      </div>
-                      <div class="form-group pr-1">
-                        <select class="form-control" name="data_type" id="data_type">
-                          <option value="String">String</option>
-                          <option value="Number">Number</option>
-                          <option value="Boolean">Boolean</option>
-                          <option value="Custom">Custom</option>
-                        </select>
-                        </div>
-                        <div class="form-group pr-1">
-
-                          <select class="form-control" name="active" id="active">
-                            <option value="Y">Yes</option>
-                            <option value="N">No</option>
-                          </select>
-                        </div>
-                        <div class="form-group pr-1">
-
-                          <select class="form-control" name="is_tabular" id="is_tabular">
-                            <option value="Y">Yes</option>
-                            <option value="N">No</option>
-                          </select>
-                        </div>
-                        <div class="form-group pr-1">
-
-                          <select class="form-control" name="is_pair" id="is_pair">
-                              <option value="Y">Yes</option>
-                              <option value="N">No</option>
-                          </select>
-                        </div>
-                        <div class="form-group pr-1">
-
-                          <select class="form-control" name="is_search" id="is_search">
-                            <option value="Y">Yes</option>
-                            <option value="N">No</option>
-                          </select>
-                        </div>
-                   </form>
+                 
                    
                   </div>
-                  <div class="col-md-12 text-right"><button id="addRow">Add Row</button></div>    
+                  <div class="col-md-12 text-right"> <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tabularModal">
+                      Add Row
+                    </button>
+                  </div>    
                   <table  id="example" class="table table-striped table-bordered datatable" style="width:100%">
                       <thead>
                         
@@ -141,7 +102,71 @@
       </div>
     </div>
     
+  
    
+   <!-- Modal -->
+   <div class="modal fade" id="tabularModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title">Modal title</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+         </div>
+         <div class="modal-body">
+            <form class="form-inline">
+                <div class="form-group pr-1">
+                    <input class="form-control" type="text" name="attribute_name" id="attribute_name">
+                </div>
+                <div class="form-group pr-1">
+                  <input class="form-control" type="text" name="attribute_label" id="attribute_label">
+                  </div>
+                  <div class="form-group pr-1">
+                    <select class="form-control" name="data_type" id="data_type">
+                      <option value="String">String</option>
+                      <option value="Number">Number</option>
+                      <option value="Boolean">Boolean</option>
+                      <option value="Custom">Custom</option>
+                    </select>
+                    </div>
+                    <div class="form-group pr-1">
+
+                      <select class="form-control" name="active" id="active">
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>
+                      </select>
+                    </div>
+                    <div class="form-group pr-1">
+
+                      <select class="form-control" name="is_tabular" id="is_tabular">
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>
+                      </select>
+                    </div>
+                    <div class="form-group pr-1">
+
+                      <select class="form-control" name="is_pair" id="is_pair">
+                          <option value="Y">Yes</option>
+                          <option value="N">No</option>
+                      </select>
+                    </div>
+                    <div class="form-group pr-1">
+
+                      <select class="form-control" name="is_search" id="is_search">
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>
+                      </select>
+                    </div>
+               </form>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+           <button type="button" class="btn btn-primary">Save</button>
+         </div>
+       </div>
+     </div>
+   </div>
 
   </div>
   <script>
