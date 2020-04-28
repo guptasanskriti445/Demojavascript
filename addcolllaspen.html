@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Bootstrap 4 Accordion with Plus Minus Icons</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/rowreorder/1.2.6/css/rowReorder.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/rowreorder/1.2.6/js/dataTables.rowReorder.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+</head>
+<style>
+  
+.modal .modal-dialog {
+  max-width: 950px;
+}
+</style> 
+<body>
+  <div class="container">
+        <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#modelId">
+      Add Tabular
+    </button>
+    <div class="row">
+      <div class="col-md-12" id="Pushaccordian">
+        <div id="accordianId" role="tablist" aria-multiselectable="true" class="d-none">
+          <div class="card">
+            <div class="card-header" role="tab" id="section1HeaderId">
+              <h5 class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordianId" href="#section1ContentId" aria-expanded="true" aria-controls="section1ContentId">
+                  Section 1
+                </a>
+              </h5>
+            </div>
+            <div id="section1ContentId" class="collapse in" role="tabpanel" aria-labelledby="section1HeaderId">
+              <div class="card-body">
+                  <div class="col-md-12">
+                    
+                  <form class="form-inline">
+                    <div class="form-group pr-1">
+                        <input class="form-control" type="text" name="attribute_name" id="attribute_name">
+                    </div>
+                    <div class="form-group pr-1">
+                      <input class="form-control" type="text" name="attribute_label" id="attribute_label">
+                      </div>
+                      <div class="form-group pr-1">
+                        <select class="form-control" name="data_type" id="data_type">
+                          <option value="String">String</option>
+                          <option value="Number">Number</option>
+                          <option value="Boolean">Boolean</option>
+                          <option value="Custom">Custom</option>
+                        </select>
+                        </div>
+                        <div class="form-group pr-1">
+
+                          <select class="form-control" name="active" id="active">
+                            <option value="Y">Yes</option>
+                            <option value="N">No</option>
+                          </select>
+                        </div>
+                        <div class="form-group pr-1">
+
+                          <select class="form-control" name="is_tabular" id="is_tabular">
+                            <option value="Y">Yes</option>
+                            <option value="N">No</option>
+                          </select>
+                        </div>
+                        <div class="form-group pr-1">
+
+                          <select class="form-control" name="is_pair" id="is_pair">
+                              <option value="Y">Yes</option>
+                              <option value="N">No</option>
+                          </select>
+                        </div>
+                        <div class="form-group pr-1">
+
+                          <select class="form-control" name="is_search" id="is_search">
+                            <option value="Y">Yes</option>
+                            <option value="N">No</option>
+                          </select>
+                        </div>
+                   </form>
+                   
+                  </div>
+                  <div class="col-md-12 text-right"><button id="addRow">Add Row</button></div>    
+                  <table  id="example" class="table table-striped table-bordered datatable" style="width:100%">
+                      <thead>
+                        
+                          <th>Attribute Name</th>
+                          <th>Label</th>
+                          <th>Data Type</th>
+                          <th> Active</th>
+                          <th> Tabular</th>
+                          <th>Pair Name</th>
+                          <th> search</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        
+                      
+                       
+                      </tbody>
+                    </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tabular Information</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+                <div class="row">
+                    <input type="text" id="tabular_name">
+                </div>
+                            
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="add_tabular">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+   
+
+  </div>
+  <script>
+  // Data table
+  $(document).ready(function() {
+// var table = $('.datatable').DataTable( {
+//    rowReorder: {
+//        selector: 'td:nth-child(2)'
+//    },
+//    responsive: true
+// } );
+//  var counter = 1;
+
+// $('#addRow').on( 'click', function () {
+//  table.row.add( [
+//       '<input type="text" id="R_' + counter + '_1" />',
+//       '<input type="text" id="R_' + counter + '_2" />',
+//       '<input type="text" id="R_' + counter + '_3" />',
+//       '<input type="text" id="R_' + counter + '_4" />',
+//       '<input type="text" id="R_' + counter + '_5" />',
+//       '<input type="text" id="R_' + counter + '_6" />',
+//       '<input type="text" id="R_' + counter + '_7" />',
+//    ] ).draw( false );
+
+//    counter++;
+// } );
+
+// Automatically add a first row of data
+// $('#addRow').click();
+   tablistcount=1;
+$('#add_tabular').click(function(){
+
+    var tabular_name=$('#tabular_name').val();
+    var clone_accordian=$('#accordianId').clone();
+    clone_accordian.attr("id","accordianId"+tablistcount);
+    var section1HeaderId=clone_accordian.find("#section1HeaderId");
+    var ahref=section1HeaderId.find("a");
+    ahref.attr("data-parent","#accordianId"+tablistcount);
+    ahref.attr("href","#section1ContentId"+tablistcount);
+    ahref.attr("aria-controls","section1ContentId"+tablistcount);
+    ahref.html(tabular_name);
+    section1HeaderId.attr("id","section1HeaderId"+tablistcount);
+    var section1ContentId=clone_accordian.find("#section1ContentId");
+    section1ContentId.attr("id","section1ContentId"+tablistcount);
+    section1ContentId.attr("aria-labelledby","section1HeaderId"+tablistcount);
+    var tablecardbody=section1ContentId.find("table");
+    tablecardbody.attr("id","attribute_table"+tablistcount);
+    $("#attribute_table"+tablistcount).DataTable( {
+   rowReorder: {
+       selector: 'td:nth-child(2)'
+   },
+   responsive: true
+    });
+    clone_accordian.removeClass("d-none");
+    clone_accordian.addClass("d-block");
+    $('#Pushaccordian').append(clone_accordian);
+    tablistcount=tablistcount+1;
+
+    });
+
+  });
+ </script>
+</body>
+</html>
