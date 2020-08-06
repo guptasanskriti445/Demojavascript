@@ -1,0 +1,125 @@
+/* global style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face{
+    font-family: "Ruhl";
+    src: url(/elenajoyproject/fonts/FrankRuhlLibre-Regular.ttf);
+}
+@font-face{
+    font-family: "Ruhl Medium";
+    src: url(/elenajoyproject/fonts/FrankRuhlLibre-Medium.ttf);
+}
+@font-face{
+    font-family: "Vibes";
+    src: url(/elenajoyproject/fonts/GreatVibes-Regular.ttf);
+}
+html{
+    font-size: 62.5%;
+    --hearder1: calc(2rem + 1vw);
+    --hearder2: calc(3.5rem + 1vw);
+    --hearder3: calc(3rem + 1vw);
+    --hearder4: calc(2.4rem + 1vw);
+    --text: calc(1.5rem + 1vw);
+    --big: calc(2.5rem + 1vw);
+    --special-color: #906272;
+    --background-color: #414141;
+    --gray-text: #525252;
+
+}
+
+h1{
+    font-size: var(--hearder1);
+}
+li, 
+button,
+label,
+input,
+a,
+p{
+    font-size: var(--text);
+}
+h2{
+    font-size: var(--hearder2);
+}
+h3{
+    font-size: var(--hearder3);
+    
+}
+h4,
+h5{
+    font-size: var(--hearder4);
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+ul{
+    list-style: none;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+/* button{
+    padding: 2rem 6rem;
+    background: #4c6e97;
+    border: none;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+}
+button:hover{
+    background: #1f3044;
+} */
+body{
+    font-family: "Ruhl", sans-serif;
+}
+h1{
+    font-family: "Vibes", sans-serif;
+}
+/* nav section  */
+.main-head{
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+}
+nav{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    min-height: 10vh;
+    padding: 2rem 0rem;
+}
+#logo{
+    flex: 1 1 20rem;
+}
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1 20rem;
+
+}
+.hero{
+    min-height: 90vh;
+    width: 95%;
+    margin: 0 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.hero-introduction{
+    flex: 2 1 40rem;
+    text-align: center;
+}
+.hero-images{
+    flex: 1 1 40rem;
+}
+.hero-elena{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
