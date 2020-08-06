@@ -1,0 +1,25 @@
+
+
+/* Custom Scrollbar using CSS */
+.custom-scrollbar-css {
+   overflow-y: scroll;
+   height: 500px;
+  
+ }
+ 
+ /* scrollbar width */
+ .custom-scrollbar-css::-webkit-scrollbar {
+   width: 10px;
+   
+ }
+ .custom-scrollbar-css::-webkit-scrollbar-track {
+   background: #eee;
+ }
+ 
+ /* scrollbar handle */
+ .custom-scrollbar-css::-webkit-scrollbar-thumb {
+   border-radius: 1rem;
+   background-color: #be1b6d;
+   background-image: linear-gradient(to top,  #3a7bd5 0%, #be1b6d 100%);
+ }
+
