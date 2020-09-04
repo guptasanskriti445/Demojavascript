@@ -1,0 +1,16 @@
+
+
+/* .font_size{
+    font-weight: 600;
+    line-height: 1.5;
+    font-size: 1.25rem;
+} */
+.txt_bd{
+    border-style: solid;
+}
+a{
+    text-decoration: none;
+}
+.swagger-bg{
+    background: rgb(233, 227, 227);
+} 

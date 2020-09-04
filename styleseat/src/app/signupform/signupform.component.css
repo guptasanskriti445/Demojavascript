@@ -1,0 +1,15 @@
+.signupf_bd{
+    max-width: 400px;
+    background: #e0f3fd;
+}
+hr{
+    border-top: 0.2rem solid black;
+}
+
+.btn{
+ border-width: 0.2rem;
+}
+a{
+    text-decoration: none;
+}
+ 

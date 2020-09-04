@@ -1,0 +1,38 @@
+    <div id="accordion" class="">
+      <div class="card border-0 ">
+        <div class="card-header btn-group bg-white border-0 p-0" >
+          
+            <button id="headingOne" class="btn shadow-sm  focus_sty" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><small>ALL</small>
+           </button>
+           <button id="headingTwo" class="btn shadow-sm  focus_sty collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><small>AT BUSINESS</small>
+           </button>
+           <button id="headingThree" class="btn shadow-sm focus_sty collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><small>HOUSE CALLS</small>
+            </button>
+            <button  id="headingFour" class="btn shadow-sm focus_sty collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+               <small> <i class="fa fa-video-camera" aria-hidden="true"></i> VIRTUAL</small>
+            </button>        
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body p-0">
+            <app-listingall></app-listingall>
+          </div>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body p-0">
+            <app-listingbusiness></app-listingbusiness>
+          </div>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body p-0">
+            <app-listinghousecall></app-listinghousecall>
+          </div>
+        </div>
+        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+          <div class="card-body p-0">
+            <app-listingvirtual></app-listingvirtual>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    

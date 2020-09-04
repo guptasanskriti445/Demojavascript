@@ -1,0 +1,30 @@
+
+<div class="container-fluid bookbeauty p-5">
+
+    <div class="discover p-3">
+        <h4 class="text-center">
+           Discover & book beauty<br>
+           & barber appointments
+        </h4>
+        
+        <form class="h-25 mr-auto p-1 m-3">
+         <div class="input-group justify-content-center">
+           <span class="input-group-append">
+             <button class="btn bg-white border-0 " type="button">
+                 <i class="fa fa-search"></i>
+             </button>
+         </span>
+           <input #city class="form-control  border-0 py-2 mr-1 pr-5" type="search"  placeholder="Service, Stylist or Salon" id="dicover_search">
+         </div>
+         <div class="input-group justify-content-center pt-3 ">
+
+           <button type="button" class="btn btn-dark pr-5 pl-5 rounded-0 "  (click)="navigateToMapSearch(city.value); ">Search</button>
+         </div>
+       </form>
+    </div>
+    
+       <div style="font-size:18px" class=" fa text-white pt-4">
+         <a class="text-white" [routerLink]="['/signup']">&#xf18e; Are you a barber or beauty professional?</a>
+      </div>
+
+   </div>

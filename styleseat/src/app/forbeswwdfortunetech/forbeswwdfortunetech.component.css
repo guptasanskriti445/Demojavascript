@@ -1,0 +1,14 @@
+.btn{
+    /* color: white */
+    opacity: 0.5;
+}
+
+.btn:focus{
+    box-shadow: none ;
+    opacity: 10;
+}
+.card-body{
+    font-size: 2rem;
+    line-height: 3rem;
+    opacity: 0.9;
+}

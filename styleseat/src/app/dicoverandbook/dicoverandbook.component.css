@@ -1,0 +1,16 @@
+.bookbeauty{
+    min-height: 50vh;
+    width: 100%;
+    padding-top: 2rem;
+     background-image: url('../../assets/images/homepage_banner.jpg');
+}
+.discover{
+    max-width: 400px;
+    /* padding: 2rem; */
+    background-color: #e0f3fd;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+a{
+    text-decoration: none;
+}

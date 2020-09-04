@@ -1,0 +1,51 @@
+.img_size{
+ border-width: 0.2rem !important;
+}
+.msgbox{
+    background: rgb(45, 93, 124);
+}
+.btn_sty{
+    border-width: 0.2rem;
+   }
+   .text-sm{
+       font-size: 80%;
+   }
+   .list_a{
+    font-size: 85%;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    color:  rgb(243, 22, 169);
+
+}
+.service_list{
+     padding-top: 1rem;
+     padding-bottom: 4rem;
+     border-top: solid;
+     border-color: rgb(229, 233, 238);
+     border-width: 0.1rem;
+}
+.contact_sty{
+    border-bottom: solid;
+     border-color: rgb(219, 222, 226);
+     border-width: 0.01rem;
+}
+tr{
+padding: 4rem;
+}
+.SeeAll{
+     position: relative;
+     
+    z-index: 100;
+}
+.img_container{
+    position: relative;
+}
+.carousel-caption{
+    position: absolute;
+}
+a{
+    text-decoration: none;
+}
+.notified_bg{
+    background-color: rgb(243, 240, 226);
+}

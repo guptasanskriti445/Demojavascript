@@ -1,0 +1,148 @@
+<app-header></app-header>
+<!-- <p>detail works!</p> -->
+<div class="container p-5">
+    <div class="container-fluid row  ">
+        <div class="col-md-7">
+            <div class="row ">
+                <div class="col-md-3">
+                    <img class="img_size border border-dark" src="assets/detailsimg/detailimg.JPG" alt="" style="width: 8.5rem;">
+                </div>
+                <div class="col-md-9">
+                  <div class="row">
+                    <div class="col-md-8">
+                       <div> <h6>Shakyra D</h6></div>
+                        <div class="text-sm">Cosmetologist,The Mane Company</div>
+                        <div class="star_icon">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-right text-sm">
+                        Favorite <i class="fa fa-bookmark-o" aria-hidden="true"></i> Share <i class="fa fa-share" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="text-center p-3 text-sm">
+                I travel between Arizona & California to meet my clients needs! Message me for
+                 questions.
+            </div>
+            <div class="text-center msgbox p-2">
+                 <div class="text-white "><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                 <div class="text-white p-1 text-sm"><strong>Have questions or a special request? Send Shakyra a message.</strong></div>
+                 <button type="button" class="btn border-dark btn_sty pr-4 pl-4 rounded-0 bg-light btn-sm text-sm" [routerLink]="['/login']" ><strong>MESSAGE</strong></button>
+            </div>
+            <div>
+                <div class="text-center text-sm p-2"><strong>SERVICES</strong></div>
+                <div *ngFor="let item of servicesList" class="service_list ">
+                    
+                        <div class="p-1"><h6>{{item.name}}</h6> </div>
+                        <div class="text-sm p-1">{{item.price}}</div>
+                        <div class="text-sm p-1">{{item.description}}</div>
+                        <div class=" float-right p-2">
+                           <a href="#" class="list_a m-2"><strong>MORE INFO</strong></a>
+                            <button type="button" class="btn btn-dark raund text-sm rounded-0" (click)="openModalWithClass(bookform,item.id)"><strong>BOOK</strong></button>
+                        </div>
+                              
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-5 justify-content-center">
+            <div class=" m-2">
+                <div class="d-flex">
+                    <img class="border border-light" src="assets/detailsimg/shorthair.JPG" alt="" style="width: 8rem;">
+                <img class="border border-light" src="assets/detailsimg/4imgs.JPG" alt="" style="width: 8rem;">
+                <img class="border border-light" src="assets/detailsimg/twogirls.JPG" alt="" style="width: 8rem;">
+                </div>
+                <div class="d-flex">
+                    <img class="border border-light" src="assets/detailsimg/threeboy.JPG" alt="" style="width: 8rem;">
+                    <img class="border border-light" src="assets/detailsimg/whitehair.JPG" alt="" style="width: 8rem;">
+                   <div class="img_container" style="width: 8rem;" >
+                    <img class="border border-light" src="assets/detailsimg/yellowhair.JPG" [routerLink]="['/Slidegellary']" alt="" style="width: 8rem;" >
+                    <div class="carousel-caption ">
+                            <a [routerLink]="['/Slidegellary']" class="text-white">SEE ALL<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                      </div>
+                   </div>
+                </div>
+                
+            </div>
+            <div class="text-center text-sm pt-2 pb-4 contact_sty">
+                <div>
+                    <h6>Shakyra D</h6>
+                </div>
+                <div>Del Sur. CA 93536</div>
+                <div>6615470946</div>
+            </div>
+            <div class="text-center contact_sty ">
+                <div class="m-4 text-sm">I travel between Arizona & California to meet my clients needs! Message me for questions.</div>
+                <button type="button" class="btn m-4 border-dark btn_sty rounded-0 bg-light btn-sm" ><strong>MESSAGE</strong></button>
+
+            </div>
+            <div class="contact_sty p-4">
+                <div><h6> Business Hours</h6></div>
+                <table class="text-sm">
+                    <tr *ngFor="let items of workingDate">
+                        <td>{{items.day}}</td>
+                        <td>{{items.open}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="contact_sty text-center p-4">
+                <div><h6>Shakyra D's Cancellation Policy</h6></div>
+                <div class="text-sm">You will not be charged if you cancel at least 24 hours before your appointment starts. Otherwise, you will be charged 25% of service price for late cancellations and 50% for no shows.</div>
+            </div>
+            <div class="p-2">
+                <div class="text-center"><h6>SHARE PROFILE</h6></div>
+                <div class="inline text-center p-2">
+                    <a href="#" title="facebook-social-media"  class="p-1"><img src="assets/icons/icons8-facebook.svg" alt="facebook-social-media"></a>
+                   <a href="#" title="twitter-social-media"  class="p-1"><img src="assets/icons/icons8-twitter.svg" alt="twitter-social-media"></a>
+                   <a href="#" title="email-social-media"  class="p-1"><img src="assets/icons/envelope-solid.svg" alt="email-social-media" style="width: 1.8rem;"></a>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+
+<!-- Modal -->
+<ng-template #bookform >  
+            <div class="modal-header  text-center">
+                <span><small>Your Appointment With</small></span>
+                <h6 class="modal-title">Shakyra</h6>
+                    <button type="button" class="close" (click)="modalRef.hide()" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+            <div class="modal-body">
+                <div class="row  border-bottom">
+                    <div class="col-md-6">
+                        <span><h6>{{rowdata.name}}</h6></span>
+                        <span><small>{{rowdata.price}}</small></span>
+                    </div>
+                    <div class="col-md-6 text-right ">
+                        <h6>Add Service</h6>
+                    </div>
+                </div>   
+                <div *ngFor="let item of servicesTimeing">
+                    <span><h6>{{item.dayname}}</h6></span>
+                    <div class=" overflow-auto"> 
+                        <button *ngFor="let dtime of item.time" type="button" class="btn border">{{dtime}}</button>
+                    </div>
+                </div>
+        
+                <div class="p-4">
+                    <i class="fa fa-calendar" aria-hidden="true"></i> View more dates
+                </div>
+                <div class="text-center notified_bg p-3"> 
+                    <div><i class="fa fa-bell" aria-hidden="true"></i></div>
+                    <div><small>Want to be notified if Shakyra has any cancellations?</small></div>
+                    <button type="button" class="btn border">NOTIFY ME!</button>
+                </div>
+            </div>
+           
+</ng-template>

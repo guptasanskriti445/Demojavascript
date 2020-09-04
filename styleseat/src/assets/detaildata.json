@@ -1,0 +1,177 @@
+[
+    {
+        "id": 1,
+        "name": "Women's Trim",
+        "price": "$15 and up for 30 minutes",
+        "description": "Maintain strong and healthy hair with a trim. "
+        
+    },
+    {
+        "id": 2,
+        "name": "Women's Cut",
+        "price": "$45 and up for 90 minutes",
+        "description": "Women's cut, detail and price may vary depending on hair type or length."
+       
+    },
+    {
+        "id": 3,
+        "name": "All Over Color",
+        "price": "$90 and up for 150 minutes",
+        "description": "Give your color a full reset with all over color change. "
+        
+    },
+    {
+        "id": 4,
+        "name": "Single Process Color",
+        "price": "$90 and up for 120 minutes",
+        "description": "Lift and color your hair in one easy step. "
+        
+    },
+    {
+        "id": 5,
+        "name": "Bleach and Tone",
+        "price": "$90 and up for 120 minutes",
+        "description": "Bleach to lift your existing color and toner to keep your hue cool, calm, and collected. "
+        
+    },
+    {
+        "id": 6,
+        "name": "Full Balayage",
+        "price": "$110 and up for 180 minutes",
+        "description": "Lightening technique where highlights are painted tip to root for a blended, sun-kissed brightness "
+        
+    },
+    {
+        "id": 7,
+        "name": "Full Foil Highlights",
+        "price": "$120 and up for 150 minutes",
+        "description": "Brighten your hair with a full head of highlights. We'll part your hair into sections and place 50 to 100 foils for sun-kissed dimension"
+        
+    },
+    {
+        "id": 8,
+        "name": "Double Process Color",
+        "price": "$125 and up for 210 minutes",
+        "description": "When you want to go twice as light. First the hair is bleached to remove your natural color, then toned to match the shade you're going for. "
+        
+    },
+    {
+        "id": 9,
+        "name": "Relaxer",
+        "price": "$40 and up for 105 minutes",
+        "description": "Smooth and straighten curls with a relaxer. "
+        
+    },
+    {
+        "id": 10,
+        "name": "Shampoo and Style",
+        "price": "$55 and up for 60 minutes",
+        "description": "It's all in the name. Enjoy a shampoo, blow dry, and style.  "
+        
+    },
+    {
+        "id": 11,
+        "name": "Twist Out",
+        "price": "$40 and up for 90 minutes",
+        "description": "Add body to your hair naturally. We'll twist sections of your hair, let them dry, and uncoil for bounce all over. "
+        
+    },
+    {
+        "id": 12,
+        "name": "Braids",
+        "price": "$55 and up for 120 minutes",
+        "description": "We'll talk about what look you want and bring your braids to life. No extension, just your natural hair. "
+        
+    },
+    {
+        "id": 13,
+        "name": "Flat Iron",
+        "price": "$55 and up for 90 minutes",
+        "description": "Get your hair silky smooth and straight with a flat iron. "
+        
+    },
+    {
+        "id": 14,
+        "name": "Natural Flexi Rods",
+        "price": "$45 and up for 120 minutes",
+        "description": "Add body and bounce to your hair with flexi rods for curls that lasts for days.  "
+        
+    },
+    {
+        "id": 15,
+        "name": "Loc Re-twist",
+        "price": "$65 and up for 105 minutes",
+        "description": "Incorporate new hair growth and touch up existing twists for polished locs.  "
+        
+    },
+    {
+        "id": 16,
+        "name": "Loc Coils",
+        "price": "$55 and up for 90 minutes",
+        "description": " "
+        
+    },
+    {
+        "id": 17,
+        "name": "Crochet Braids",
+        "price": "$90 and up for 180 minutes",
+        "description": "Stylish and protective. We'll attach extensions through your natural hair for a full-bodied look. "
+        
+    },
+    {
+        "id": 18,
+        "name": "Individual Braids",
+        "price": "$120 and up for 300 minutes",
+        "description": " "
+        
+    },
+    {
+        "id": 19,
+        "name": "Senegalese Twist",
+        "price": "$120 and up for 300 minutes",
+        "description": " "
+        
+    },
+    {
+        "id": 20,
+        "name": "Box Braids",
+        "price": "$120 and up for 240 minutes",
+        "description": "Protective and trendy, this braid style parts sections of your hair in boxes for a tiled pattern part and even braids. "
+        
+    },
+    {
+        "id": 21,
+        "name": "Havana Twists",
+        "price": "$120 and up for 225 minutes",
+        "description": " "
+        
+    },
+    {
+        "id": 22,
+        "name": "Marley Twist",
+        "price": "$120 and up for 240 minutes",
+        "description": " "
+        
+    },
+    {
+        "id": 23,
+        "name": "Takedown",
+        "price": "$15 and up for 60 minutes",
+        "description": " It's all in the name. Safely take down your hairstyle so you can start fresh. "
+        
+    },
+    {
+        "id": 24,
+        "name": "Acrylic Nails",
+        "price": "$40 and up for 90 minutes",
+        "description": " "
+        
+    },
+    {
+        "id": 25,
+        "name": "Acrylic Fill",
+        "price": "$20 and up for 60 minutes",
+        "description": " "
+        
+    }
+]

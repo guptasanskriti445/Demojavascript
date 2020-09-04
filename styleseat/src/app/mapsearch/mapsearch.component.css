@@ -1,0 +1,19 @@
+.btn_sty{
+    border-width: 0.2rem;
+   }
+  
+   .theme-green .bs-datepicker-head {
+    background-color: rgb(243, 22, 169) !important;
+   
+}
+.location-filter-component{
+    border: 1px solid #121111;
+    max-width: 22rem;
+    height: 25rem;
+    /* height: auto; */
+}
+.dropdown-item {
+    position: relative;
+    display: -webkit-box !important;
+}
+

@@ -1,0 +1,61 @@
+
+
+<div class="container-fluid">
+            <form class="form-inline shadow-sm  mr-auto p-1  m-1">
+                <div class="input-group bg-dark p-1 ">
+                <span class="input-group-append">
+                    <button class="btn bg-white border-0 " type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+                <input class="form-control  border-0 py-2 mr-1 pr-5" type="search" placeholder="Service, Stylist or Salon" id="header_search">
+                <button class="btn btn-dark " type="submit">Search</button>
+                </div>
+                <div class="d-inline">
+                    <button type="button" class="btn border-dark btn_sty m-2 rounded-0" bsDatepicker [(bsValue)]="DateValue"><i class="fa fa-calendar" aria-hidden="true"></i>  ANYTIME</button>
+                    <button type="button" class="btn border-dark  d-md-none d-lg-none d-sm-block btn_sty m-2 rounded-0"[routerLink]="['/map']" ><i class="fa  fa-location-arrow" aria-hidden="true"></i>  View Map</button>
+                    <!-- <div dropdown>
+                        <button id="button-basic" dropdownToggle type="button" class="btn border-dark btn_sty m-2 rounded-0 dropdown-toggle"  aria-controls="dropdown-basic"><i class="fa fa-map-marker" aria-hidden="true"></i>  MY LOCATION</button>
+                        <form action="" id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                        role="menu" aria-labelledby="button-basic">
+                          <input type="text">
+                          <button>Search</button>
+
+                        </form>
+                    </div> -->
+                    <div class="btn-group" dropdown>
+                        <button id="button-basic" dropdownToggle type="button" class="btn border-dark btn_sty m-2 rounded-0  dropdown-toggle"
+                                aria-controls="dropdown-basic">
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>  MY LOCATION <span class="caret"></span>
+                        </button>
+                        <div action="" id="dropdown-basic" *dropdownMenu class="dropdown-menu location-filter-component justify-content-center "
+                        role="menu" aria-labelledby="button-basic">
+                        <div  role="menuitem" class="dropdown-item row ">
+                            <input  type="text" class=" form-control col-md-9">
+                            <button class=" btn btn-dark col-md-3 rounded-0">FIND ME</button>
+                        </div>
+                    </div>
+                        <!-- <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                            role="menu" aria-labelledby="button-basic">
+                            <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+                            <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li class="divider dropdown-divider"></li>
+                            <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+                            </li>
+                        </ul> -->
+                        </div>              
+                </div>
+        </form>
+</div>
+<div class="container-fluid">
+    <div class="row border-secondary">
+        <div class="col-md-6">
+            <app-listing></app-listing>
+        </div>
+        <div class="col-md-6 d-none d-md-block d-lg-block">
+            <img class="img_size img-fluid" src="assets/listingimages/map.JPG" alt="">
+
+        </div>
+    </div>
+</div>

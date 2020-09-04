@@ -1,0 +1,21 @@
+
+.loginf_bd{
+    max-width: 400px;
+    background: #e0f3fd;
+}
+
+.fa-facebook-square, .facebook{
+    background: rgb(54, 54, 121);
+    color: white;
+   
+}
+.fa-apple, .apple{
+    background: black;
+    color: white;
+}
+.btn{
+ border-width: 0.2rem;
+}
+a{
+    text-decoration: none;
+}

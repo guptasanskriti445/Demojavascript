@@ -1,0 +1,14 @@
+
+ .nav-link:hover{
+  color: rgb(243, 22, 169) !important;
+ }
+ .active {
+     color: rgb(243, 22, 169) !important;
+ }
+ .active:hover{
+     background:  rgb(243, 22, 169);
+     color: white !important;
+ }
+ form{
+    display: block;
+}

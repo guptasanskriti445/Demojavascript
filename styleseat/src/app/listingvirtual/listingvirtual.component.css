@@ -1,0 +1,13 @@
+.fa-star{
+    color: rgb(243, 22, 169) ;
+}
+.retry_search{
+    max-height: 66vh;
+    overflow-x: hidden !important;
+}
+.btn_sty{
+    border-width: 0.2rem;
+   }
+   a{
+       text-decoration: none;
+   }

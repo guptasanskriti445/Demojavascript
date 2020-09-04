@@ -1,0 +1,44 @@
+ [
+    {
+        "id": 1,
+        "day":"Sunday",
+        "open":"9:00 AM- 7:15 PM"
+
+    },
+    {
+        "id": 2,
+        "day":"Monday",
+        "open":"Closed"
+
+    },
+    {
+        "id": 3,
+        "day":"Tuesday",
+        "open":"9:00 AM- 7:15 PM"
+
+    },
+    {
+        "id": 4,
+        "day":"Wednesday",
+        "open":"9:00 AM- 7:15 PM"
+
+    },
+    {
+        "id": 5,
+        "day":"Thursday",
+        "open":"9:00 AM- 7:15 PM"
+
+    },
+    {
+        "id": 6,
+        "day":"Friday",
+        "open":"9:00 AM- 7:15 PM"
+
+    },
+    {
+        "id": 7,
+        "day":"Saturday",
+        "open":"9:00 AM- 7:15 PM"
+
+    }
+]
