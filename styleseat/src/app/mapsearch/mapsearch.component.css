@@ -1,6 +1,9 @@
 .btn_sty{
     border-width: 0.2rem;
    }
+   agm-map{
+       height: 32rem;
+   }
   
    .theme-green .bs-datepicker-head {
     background-color: rgb(243, 22, 169) !important;
