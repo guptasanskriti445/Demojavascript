@@ -49,3 +49,9 @@ a{
 .notified_bg{
     background-color: rgb(243, 240, 226);
 }
+.btn_flow{
+
+    width: -webkit-fill-available;
+    overflow-x: scroll; 
+    display: inline-flex;
+}

@@ -44,7 +44,7 @@
                         <div class="text-sm p-1">{{item.description}}</div>
                         <div class=" float-right p-2">
                            <a href="#" class="list_a m-2"><strong>MORE INFO</strong></a>
-                            <button type="button" class="btn btn-dark raund text-sm rounded-0" (click)="openModalWithClass(bookform,item.id)"><strong>BOOK</strong></button>
+                            <button type="button" class="btn btn-dark text-sm rounded-0" (click)="openModalWithClass(bookform,item.id)"><strong>BOOK</strong></button>
                         </div>
                               
                 </div>
@@ -112,14 +112,17 @@
 <!-- Modal -->
 <ng-template #bookform >  
             <div class="modal-header  text-center">
-                <span><small>Your Appointment With</small></span>
-                <h6 class="modal-title">Shakyra</h6>
+              
                     <button type="button" class="close" (click)="modalRef.hide()" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
             </div>
             <div class="modal-body">
-                <div class="row  border-bottom">
+                <div class="text-center border-bottom pb-2">
+                    <span><small>Your Appointment With</small></span>
+                    <div><h6 class="modal-title">Shakyra</h6></div>
+                </div>
+                <div class="row  border-bottom pt-3 pb-3">
                     <div class="col-md-6">
                         <span><h6>{{rowdata.name}}</h6></span>
                         <span><small>{{rowdata.price}}</small></span>
@@ -130,8 +133,8 @@
                 </div>   
                 <div *ngFor="let item of servicesTimeing">
                     <span><h6>{{item.dayname}}</h6></span>
-                    <div class=" overflow-auto"> 
-                        <button *ngFor="let dtime of item.time" type="button" class="btn border">{{dtime}}</button>
+                    <div class="btn_flow"> 
+                        <button *ngFor="let dtime of item.time" type="button" class="btn border-dark btn-sm rounded-0 m-2 btn_sty">{{dtime}}</button>
                     </div>
                 </div>
         
