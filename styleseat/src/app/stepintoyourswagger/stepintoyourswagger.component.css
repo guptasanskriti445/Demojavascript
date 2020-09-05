@@ -5,8 +5,8 @@
     line-height: 1.5;
     font-size: 1.25rem;
 } */
-.txt_bd{
-    border-style: solid;
+.border-width-2{
+    border-width: 2px !important   ;
 }
 a{
     text-decoration: none;
