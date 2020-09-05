@@ -71,7 +71,7 @@ import { SlidegellaryComponent } from './slidegellary/slidegellary.component';
     ModalModule.forRoot(),
     AppRoutingModule,
     AgmCoreModule.forRoot({
-      apiKey: ''
+      apiKey: 'AIzaSyD7VPFlwYPpkIxdvDRHJKxWgN5mzjeZzYk'
     })
   ],
   providers: [],
