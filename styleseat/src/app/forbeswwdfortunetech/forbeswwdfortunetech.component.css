@@ -3,7 +3,7 @@
     opacity: 0.5;
 }
 
-.btn:focus{
+.active{
     box-shadow: none ;
     opacity: 10;
 }

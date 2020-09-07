@@ -32,6 +32,7 @@ import { ListingComponent } from './listing/listing.component';
 import { FormsignupComponent } from './formsignup/formsignup.component';
 import { MapComponent } from './map/map.component';
 import { SlidegellaryComponent } from './slidegellary/slidegellary.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { SlidegellaryComponent } from './slidegellary/slidegellary.component';
     FormsignupComponent,
     MapComponent,
     SlidegellaryComponent,
+    TestimonialsComponent,
     
   ],
   imports: [
